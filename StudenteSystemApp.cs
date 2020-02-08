@@ -37,20 +37,20 @@ namespace StudentSystem
 
         private void ExecuteCommands()
         {
-            List<Student> studentsFiltered = new List<Student>();
+            List<Student> studentsFiltered = studentDataManager.GetStudents();
             foreach(SearchCriteria sc in inputCommands.GetSearchCriteriaItems())
             {
                 switch(sc.Criteria)
                 {
                     case "name":                        
-                        List<Student> students = studentDataManager.FindStudentsByName(sc.Value);
+                        List<Student> students = studentDataManager.FilterByName(studentsFiltered, sc.Value);
                         PrintStudents(students);
                         break;
                     case "type":
-                        studentDataManager.FindByType(sc.Value);
+                        studentDataManager.FilterByType(studentsFiltered, sc.Value);
                         break;
                     case "gender":
-                        studentDataManager.FindByGender(sc.Value);
+                        studentDataManager.FilterByGender(studentsFiltered, sc.Value);
                         break;
                     default:
                         break;

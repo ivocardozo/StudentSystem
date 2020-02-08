@@ -62,17 +62,21 @@ namespace StudentSystem
         {
             studentStorage.Delete(studentId);
         }
-        public List<Student> FindStudentsByName(string name)
+        public List<Student> GetStudents()
+        {
+            return studentStorage.GetAll();
+        }
+        public List<Student> FilterByName(List<Student> students, string name)
         {
             return null;
         }
 
-        public List<Student> FindByType(string type)
+        public List<Student> FilterByType(List<Student> students, string type)
         {
             return null;
         }
 
-        public List <Student> FindByGender(string gender)
+        public List <Student> FilterByGender(List<Student> students, string gender)
         {
             return null;
         }
