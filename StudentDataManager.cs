@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using StudentSystem.Models;
 using System;
+using System.Linq;
 
 namespace StudentSystem
 {
@@ -31,6 +32,11 @@ namespace StudentSystem
                     Type = student.Type
                 };
 
+        }
+        public void Delete(int studentId)
+        {
+            var itemToRemove = students.Single(s => s.Id == studentId);
+            students.Remove(itemToRemove);
         }
     }
 
