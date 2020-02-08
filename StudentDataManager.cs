@@ -6,7 +6,32 @@ namespace StudentSystem
 {
     class StudentStorage
     {
-        
+        int id;
+        List<Student> students;
+        public StudentStorage()
+        {
+            id = 1;
+            students = new List<Student>();
+        }
+        public Student Add(Student student)
+        {
+            student.Id = id;
+            student.LastUpdated = DateTime.Now.ToString();
+            students.Add(student);
+            id ++;
+            return StudentCloner(student);
+        }
+        Student StudentCloner(Student student)
+        {
+            return new Student(){
+                    Id = student.Id,
+                    Gender = student.Gender,
+                    LastUpdated = student.LastUpdated,
+                    Name = student.Name,
+                    Type = student.Type
+                };
+
+        }
     }
 
     public class StudentDataManager
@@ -20,7 +45,7 @@ namespace StudentSystem
 
         public Student StoreStudent(Student student)
         {
-            return null;
+            return studentStorage.Add(student);
         }
         public void DeleteStudent(int studentId)
         {
