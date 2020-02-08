@@ -6,6 +6,6 @@ namespace StudentSystem
     public class StudentSearcher
     {
         private Filterer filterer;
-        private Sorterer sorterer;
+        private Sorter sorterer;
     }
 }
