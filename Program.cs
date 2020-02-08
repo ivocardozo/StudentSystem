@@ -7,7 +7,8 @@ namespace StudentSystem
     {
         static void Main(string[] args)
         {
-            StudentFileLoader.CSVFileParser("students.csv");
+            StudentSystemApp app = new StudentSystemApp(args);
+            app.Run();            
         }
     }
 }

@@ -48,10 +48,12 @@ namespace StudentSystem
     public class StudentDataManager
     {
         StudentStorage studentStorage;
+        StudentSearcher searcher;
 
         public StudentDataManager()
         {
             studentStorage = new StudentStorage();
+            searcher = new StudentSearcher();
         }        
 
         public Student StoreStudent(Student student)
@@ -68,7 +70,7 @@ namespace StudentSystem
         }
         public List<Student> FilterByName(List<Student> students, string name)
         {
-            return null;
+            return searcher.FilterByName(students, name);
         }
 
         public List<Student> FilterByType(List<Student> students, string type)

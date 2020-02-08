@@ -60,13 +60,16 @@ namespace StudentSystem
 
         private void PrintStudents(List<Student> students)
         {
+            Console.WriteLine(students.Count > 0 ? "" : "No students found");
             foreach(Student s in students)
             {
                 Console.WriteLine($"Type: {s.Type}");
                 Console.WriteLine($"Name: {s.Name}");
                 Console.WriteLine($"Gender: {s.Gender}");
                 Console.WriteLine($"LastUpdate: {s.LastUpdated}");
+                Console.WriteLine("-------------------");
             }
+            Console.WriteLine();
         }
 
     }
