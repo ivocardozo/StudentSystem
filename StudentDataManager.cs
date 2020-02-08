@@ -38,6 +38,11 @@ namespace StudentSystem
             var itemToRemove = students.Single(s => s.Id == studentId);
             students.Remove(itemToRemove);
         }
+        public List<Student> GetAll()
+        {
+            List<Student> listCopied = students.ToList();
+            return listCopied;
+        }
     }
 
     public class StudentDataManager
@@ -57,7 +62,6 @@ namespace StudentSystem
         {
             studentStorage.Delete(studentId);
         }
-
         public List<Student> FindStudentsByName(string name)
         {
             return null;
