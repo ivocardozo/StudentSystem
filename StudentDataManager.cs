@@ -55,7 +55,7 @@ namespace StudentSystem
         }
         public void DeleteStudent(int studentId)
         {
-            
+            studentStorage.Delete(studentId);
         }
 
         public List<Student> FindStudentsByName(string name)
