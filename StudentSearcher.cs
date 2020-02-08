@@ -16,7 +16,9 @@ namespace StudentSystem
         }
         public List<Student> FilterByName(List<Student> students,string name)
         {
-            return filterer.Filter(new FilterByName(name), students);
+            List<Student> s = filterer.Filter(new FilterByName(name), students);
+            sorter.Sort(new SortAlphabetically(), s);
+            return s;
         }
     }
 }

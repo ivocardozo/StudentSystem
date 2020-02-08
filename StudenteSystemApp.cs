@@ -43,19 +43,19 @@ namespace StudentSystem
                 switch(sc.Criteria)
                 {
                     case "name":                        
-                        List<Student> students = studentDataManager.FilterByName(studentsFiltered, sc.Value);
-                        PrintStudents(students);
+                        studentsFiltered = studentDataManager.FilterByName(studentsFiltered, sc.Value);                        
                         break;
                     case "type":
-                        studentDataManager.FilterByType(studentsFiltered, sc.Value);
+                        studentsFiltered = studentDataManager.FilterByType(studentsFiltered, sc.Value);
                         break;
                     case "gender":
-                        studentDataManager.FilterByGender(studentsFiltered, sc.Value);
+                        studentsFiltered = studentDataManager.FilterByGender(studentsFiltered, sc.Value);
                         break;
                     default:
                         break;
                 }
             }
+            PrintStudents(studentsFiltered);
         }
 
         private void PrintStudents(List<Student> students)

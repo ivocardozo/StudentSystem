@@ -8,7 +8,6 @@ namespace StudentSystem.StudentSearcherUtils.Sorters
     {
         public List<Student> Sort(ISorter sorter, List<Student> students)
         {
-            List<Student> sortedList = new List<Student>();
             return sorter.Sort(students);
         }
     }
