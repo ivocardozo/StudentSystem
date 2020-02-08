@@ -1,4 +1,5 @@
 ﻿using System;
+using StudentSystem.Utils;
 
 namespace StudentSystem
 {
@@ -6,7 +7,7 @@ namespace StudentSystem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            StudentFileLoader.CSVFileParser("students.csv");
         }
     }
 }
