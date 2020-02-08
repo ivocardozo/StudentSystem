@@ -17,11 +17,12 @@ namespace StudentSystem
         public Student Add(Student student)
         {
             student.Id = id;
-            student.LastUpdated = DateTime.Now.ToString();
+//            student.LastUpdated = DateTime.Now.ToString();
             students.Add(student);
             id ++;
             return StudentCloner(student);
         }
+        
         Student StudentCloner(Student student)
         {
             return new Student(){
@@ -75,12 +76,12 @@ namespace StudentSystem
 
         public List<Student> FilterByType(List<Student> students, string type)
         {
-            return null;
+            return searcher.FilterByType(students, type);
         }
 
         public List <Student> FilterByGender(List<Student> students, string gender)
         {
-            return null;
+            return searcher.FilterByGender(students, gender);
         }
     }
 }

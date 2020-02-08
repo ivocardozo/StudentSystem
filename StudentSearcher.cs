@@ -20,5 +20,17 @@ namespace StudentSystem
             sorter.Sort(new SortAlphabetically(), s);
             return s;
         }
+        public List<Student> FilterByType(List<Student> students, string type)
+        {
+            List<Student> s = filterer.Filter(new FilterByType(type), students);
+            sorter.Sort(new SortByDate(), s);
+            return s;
+        }
+        public List<Student> FilterByGender(List<Student> students, string gender)
+        {
+            List<Student> s = filterer.Filter(new FilterByGender(gender), students);
+            sorter.Sort(new SortByDate(), s);
+            return s;
+        }
     }
 }
